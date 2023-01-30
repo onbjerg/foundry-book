@@ -8,7 +8,6 @@ Configuration related to the behavior of `forge test`.
 - [Fuzz](#fuzz)
 - [Invariant](#invariant)
 
-
 ### General
 
 ##### `verbosity`
@@ -87,7 +86,8 @@ The gas limit for each test case.
 > Due to a limitation in a dependency of Forge, you **cannot raise the gas limit** beyond the default without changing the value to a string.
 >
 > In order to use higher gas limits use a string:
- ```toml
+
+```toml
 gas_limit = "18446744073709551615" # u64::MAX
 ```
 
@@ -194,45 +194,55 @@ The url of the rpc server that should be used for any rpc calls.
 
 The etherscan API key for RPC calls.
 
+#### Pattern Configurations
+
+Below pattern configurations use globs to match which tests to run. The supported glob patterns can be found here: https://docs.rs/glob/latest/glob/struct.Pattern.html  
+Here are some examples of patterns that can be used:
+
+- Case sensitive: `*[Ff]oo*`
+- Either or: `*Set*,*Update*`
+- Both in order: `*Foo*Bar*`
+- Include while exclude in front: `*[!Foo]Bar*`
+
 ##### `test_pattern`
 
-- Type: regex
+- Type: glob
 - Default: none
 - Environment: `FOUNDRY_TEST_PATTERN` or `DAPP_TEST_PATTERN`
 
-Only run test methods matching regex.
+Only run test methods matching glob.
 Equivalent to `forge test --match-test <TEST_PATTERN>`
 
 ##### `test_pattern_inverse`
 
-- Type: regex
+- Type: glob
 - Default: none
 - Environment: `FOUNDRY_TEST_PATTERN_INVERSE` or `DAPP_TEST_PATTERN_INVERSE`
 
-Only run test methods not matching regex.
+Only run test methods not matching glob.
 Equivalent to `forge test --no-match-test <TEST_PATTERN_INVERSE>`
 
 ##### `contract_pattern`
 
-- Type: regex
+- Type: glob
 - Default: none
 - Environment: `FOUNDRY_CONTRACT_PATTERN` or `DAPP_CONTRACT_PATTERN`
 
-Only run test methods in contracts matching regex.
+Only run test methods in contracts matching glob.
 Equivalent to `forge test --match-contract <CONTRACT_PATTERN>`
 
 ##### `contract_pattern_inverse`
 
-- Type: regex
+- Type: glob
 - Default: none
 - Environment: `FOUNDRY_CONTRACT_PATTERN_INVERSE` or `DAPP_CONTRACT_PATTERN_INVERSE`
 
-Only run test methods in contracts not matching regex.
+Only run test methods in contracts not matching glob.
 Equivalent to `forge test --no-match-contract <CONTRACT_PATTERN_INVERSE>`
 
 ##### `path_pattern`
 
-- Type: regex
+- Type: glob
 - Default: none
 - Environment: `FOUNDRY_PATH_PATTERN` or `DAPP_PATH_PATTERN`
 
@@ -240,7 +250,7 @@ Only runs test methods on files matching the path.
 
 ##### `path_pattern_inverse`
 
-- Type: regex
+- Type: glob
 - Default: none
 - Environment: `FOUNDRY_PATH_PATTERN_INVERSE` or `DAPP_PATH_PATTERN_INVERSE`
 
@@ -360,19 +370,19 @@ Configuration values for `[invariant]` section.
 > Configuration for `[invariant]` section has the fallback logic
 > for common config entries (`runs`, `seed`, `dictionary_weight` etc).
 >
-> * If the entries are not set in either section, then the defaults will be used.
-> * If the entries are set in the `[fuzz]` section, but are not set in the `[invariant]`
+> - If the entries are not set in either section, then the defaults will be used.
+> - If the entries are set in the `[fuzz]` section, but are not set in the `[invariant]`
 >   section, these values will automatically be set to the values specified in
 >   the `[fuzz]` section.
-> * For any profile other than `default`:
->     * If the common entries are set in the `[invariant]` (same
->       as `[profile.default.invariant]`) section, then the values from
->       `[invariant]` section will be used.
->     * If the common entries are not set in the `[invariant]` section,
->       but are set in the `[fuzz]` (same as `[profile.default.fuzz]`) section,
->       then the values from the `[fuzz]` section will be used.
->     * If it's none of the cases described above, then the defaults
->       will be used.
+> - For any profile other than `default`:
+>   - If the common entries are set in the `[invariant]` (same
+>     as `[profile.default.invariant]`) section, then the values from
+>     `[invariant]` section will be used.
+>   - If the common entries are not set in the `[invariant]` section,
+>     but are set in the `[fuzz]` (same as `[profile.default.fuzz]`) section,
+>     then the values from the `[fuzz]` section will be used.
+>   - If it's none of the cases described above, then the defaults
+>     will be used.
 
 ##### `runs`
 
