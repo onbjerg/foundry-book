@@ -18,9 +18,9 @@ function expectRevert(bytes calldata message) external;
 
 If the **next call** does not revert with the expected data `message`, then `expectRevert` will.
 
-After calling `expectRevert`, calls to other cheatcodes before the reverting call are ignored.
+After calling `expectRevert`, calls to other cheatcodes before the reverting call are ignored. However, using other `expect` cheatcodes with `expectRevert` is forbidden and will cause the test to fail.
 
-This means, for example, we can call [`prank`](./prank.md) immediately before the reverting call.
+This means, for example, we can call [`prank`](./prank.md) immediately before the reverting call, but we cannot call [`expectEmit`](./expect-emit.md) immediately before the reverting call.
 
 There are 3 signatures:
 

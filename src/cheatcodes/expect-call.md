@@ -27,7 +27,7 @@ function expectCall(
 
 ### Description
 
-Expects that a call to a specified address `where`, where the call data either strictly or loosely matches `data`. The cheatcode can be called in two ways:
+Expects that a call to a specified address `where`, where the call data either strictly or loosely matches `data`, in the next call's subcalls. The cheatcode can be called in two ways:
 
 - If no `count` parameter is specified, the call will be expected to be made at least the amount of times the cheatcode was called. For the same calldata, you cannot call the cheatcode with no `count` and then pass in a `count` parameter.
 - If `count` is specified, the call will be expected to be made strictly `count` times. For the same calldata, the `count` value cannot be overwritten with another cheatcode call, nor it can be increment by calling the cheatcode without a `count` parameter.

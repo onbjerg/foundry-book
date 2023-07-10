@@ -3,11 +3,11 @@
 
 ### Introduction
 
-This tutorial will cover invariant testing, using **Bonding Curve Implementation** as a target example. All invariant tests are written in Solidity using the `Foundry Invaraint Testing` feature.
+This tutorial will cover invariant testing, using **Bonding Curve Implementation** as a target example. All invariant tests are written in Solidity using the `Foundry Invariant Testing` feature.
 
 However, this guide is for educational purposes only. The code is not audited. Please do not use it in production.
 
-> 💡 Note: A full implementation of the bonding curve can be found [here](https://github.com/Ratimon/bonding-curves), and for further reading about invariant testing, we can check out the `Invariant Testing` [reference](../reference/forge/invariant-testing.md).
+> 💡 Note: A full implementation of the bonding curve can be found [here](https://github.com/Ratimon/bonding-curves), and for further reading about invariant testing, we can check out the `Invariant Testing` [reference](../forge/invariant-testing.md).
 
 ### Quick Start
 
@@ -27,17 +27,7 @@ The key consderation is to define these:
 
 2. **Actions**  (a set of things that can happen during each run)
 
-To get started, we are going to focus on the following directories in this [repository](https://github.com/Ratimon/bonding-curves):
-
-```
-.
-├── Makefile
-├── foundry.toml
-└── test
-    ├── invariant
-```
-
-In this guide, we can run the fuzzing campagin by running the following command:
+To get started, make sure to clone the repository. All commands will be available in the `Makefile`. We can run the fuzzing campagin by running the following command:
 
 ```sh
 make invariant-LinearBondingCurve

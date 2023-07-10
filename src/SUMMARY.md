@@ -5,29 +5,32 @@
 # Getting Started
 
 - [Installation](./getting-started/installation.md)
-- [First Steps with Foundry](./getting-started/first-steps.md)
-
-# Projects
-
+<!-- - [First Steps with Foundry](./getting-started/first-steps.md) -->
 - [Creating a New Project](./projects/creating-a-new-project.md)
 - [Working on an Existing Project](./projects/working-on-an-existing-project.md)
 - [Dependencies](./projects/dependencies.md)
 - [Project Layout](./projects/project-layout.md)
 
+# Testing
+
+- [Basics of Testing With Foundry](./testing/tests.md)
+  - [Writing Tests](./testing/writing-tests.md)
+  - [Cheatcodes](./testing/cheatcodes.md)
+  - [Forge Standard Library Overview](./testing/forge-std.md)
+  - [Understanding Traces](./testing/traces.md)
+  - [Fork Testing](./testing/fork-testing.md)
+- [Advanced Testing](./testing/advanced-testing.md)
+  - [Fuzz Testing](./testing/fuzz-testing.md)
+  - [Invariant Testing](./testing/invariant-testing.md)
+  - [Differential Testing](./testing/differential-ffi-testing.md)
+
+
+
 # Forge Overview
 
 - [Overview of Forge](forge/README.md)
-- [Tests](./forge/tests.md)
-  - [Writing Tests](./forge/writing-tests.md)
-  - [Cheatcodes](./forge/cheatcodes.md)
-  - [Forge Standard Library Overview](./forge/forge-std.md)
-  - [Understanding Traces](./forge/traces.md)
-  - [Fork Testing](./forge/fork-testing.md)
+  - [Testing Overview](forge/testing.md) !
   <!--  - [Coverage Reports]() !-->
-- [Advanced Testing](./forge/advanced-testing.md)
-  - [Fuzz Testing](./forge/fuzz-testing.md)
-  - [Invariant Testing](./forge/invariant-testing.md)
-  - [Differential Testing](./forge/differential-ffi-testing.md)
     <!--  - [Symbolic Testing]() !-->
     <!--  - [Table Testing]() !-->
     <!--  - [Mutation Testing]() !-->
@@ -51,31 +54,9 @@
 
 - [Overview of Chisel](./chisel/README.md)
 
-# Configuration
+# References
 
-- [Configuring with `foundry.toml`](./config/README.md)
-- [Continuous Integration](./config/continous-integration.md)
-- [Integrating with VSCode](./config/vscode.md)
-- [Shell Autocompletion](./config/shell-autocompletion.md)
-- [Static Analyzers](./config/static-analyzers.md)
-- [Integrating with Hardhat](./config/hardhat.md)
-
-# Tutorials
-
-- [Best Practices](./tutorials/best-practices.md)
-- [Creating an NFT with Solmate](./tutorials/solmate-nft.md)
-- [Docker and Foundry](./tutorials/foundry-docker.md)
-- [Testing EIP-712 Signatures](./tutorials/testing-eip712.md)
-- [Solidity Scripting](./tutorials/solidity-scripting.md)
-- [Forking Mainnet with Cast and Anvil](./tutorials/forking-mainnet-with-cast-anvil.md)
-- [Learning Foundry Videos](./tutorials/learn-foundry.md)
-<!-- - [Incremental Adoption]() !-->
-
-# Appendix
-
-- [FAQ](./faq.md)
-- [Help us improve Foundry](./contributing.md)
-- [References](./reference/README.md)
+- [References by tool](./reference/README.md)
   - [`forge` Commands](./reference/forge/README.md)
     - [General Commands](./reference/forge/general-commands.md)
       - [forge](./reference/forge/forge.md)
@@ -350,6 +331,32 @@
       - [`deriveRememberKey`](./reference/forge-std/derive-remember-key.md)
     - [Console Logging](./reference/forge-std/console-log.md)
   - [DSTest Reference](./reference/ds-test.md)
+
+# Tutorials
+
+- [Best Practices](./tutorials/best-practices.md)
+- [Creating an NFT with Solmate](./tutorials/solmate-nft.md)
+- [Docker and Foundry](./tutorials/foundry-docker.md)
+- [Testing EIP-712 Signatures](./tutorials/testing-eip712.md)
+- [Solidity Scripting](./tutorials/solidity-scripting.md)
+- [Forking Mainnet with Cast and Anvil](./tutorials/forking-mainnet-with-cast-anvil.md)
+- [Invariant Testing a Bonding Curve](./tutorials/invariant-testing-bonding-curve.md)
+- [Learning Foundry Videos](./tutorials/learn-foundry.md)
+<!-- - [Incremental Adoption]() !-->
+
+# Configuration
+
+- [Configuring with `foundry.toml`](./config/README.md)
+- [Continuous Integration](./config/continous-integration.md)
+- [Integrating with VSCode](./config/vscode.md)
+- [Shell Autocompletion](./config/shell-autocompletion.md)
+- [Static Analyzers](./config/static-analyzers.md)
+- [Integrating with Hardhat](./config/hardhat.md)
+
+# Appendix
+
+- [FAQ](./faq.md)
+- [Help us improve Foundry](./contributing.md)
 - [Miscellaneous](./misc/README.md)
   - [Struct encoding](./misc/struct-encoding.md)
   - [Precompile Registry](./misc/precompile-registry.md)
